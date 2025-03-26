@@ -1,5 +1,4 @@
 <template>
-  <div class="flex flex-row flex-wrap justify-center items-stretch w-auto">
 
     <div class="w-50 h-70 text-center p-6 rounded-lg shadow-sm">
       <div class="text-4xl font-mono mt-12 mb-5">{{ formattedWorkTime }}</div>
@@ -57,7 +56,6 @@
       </div>
     </div>
 
-  </div>
 </template>
 
 <script setup lang="ts">
