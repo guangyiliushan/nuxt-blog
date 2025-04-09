@@ -59,7 +59,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onUnmounted, onMounted } from 'vue'
+import { ref, computed, onUnmounted } from 'vue'
 
 // 表驱动
 const PHASE_CONFIG = {
@@ -188,13 +188,6 @@ function adjustTime(type: 'work' | 'break', amount: number) {
 function toggleSettings() {
   showSettings.value = !showSettings.value
 }
-
-onMounted(() => {
-  window.addEventListener('keyup', (e) => {
-    if (e.code === 'Space') toggleTimer()
-    if (e.code === 'Escape') resetTimer()
-  })
-})
 
 onUnmounted(() => {
   timer.stop()

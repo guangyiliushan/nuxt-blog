@@ -1,11 +1,11 @@
 <template>
-    <div class="w-55 h-70 shadow-sm rounded-lg p-4">
+    <div class="w-55 h-40 shadow-sm rounded-lg p-4">
         <div class="flex">
             <UInput v-model="newItem" placeholder="输入新事项" icon="i-heroicons-plus-circle" @keyup.enter="addItem" />
             <UButton label="添加" color="primary" :disabled="!newItem.trim()" @click="addItem" />
         </div>
 
-        <ul class="space-y-2 overflow-hidden mt-4 ">
+        <ul class="space-y-2 overflow-hidden mt-4 max-h-30 overflow-y-auto overflow-x-auto">
             <li 
                 v-for="(todo, index) in todos" 
                 :key="index"

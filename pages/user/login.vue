@@ -7,6 +7,9 @@ const formData = ref({
     password: '',
 })
 const errorMessage = ref('')
+
+
+
 </script>
 
 <template>
@@ -15,7 +18,7 @@ const errorMessage = ref('')
             <UButton @click="loginType = true">用户名</UButton>
             <UButton @click="loginType = false">邮箱</UButton>
         </div>
-        <form>
+        <form @submit.prevent="">
             <div>
                 <div v-if="loginType"><label for="username">用户名:</label>
                     <UInput id="username" v-model="formData.username" type="text" required />
@@ -26,6 +29,7 @@ const errorMessage = ref('')
                 <label for="password">密码:</label>
                 <UInput id="password" v-model="formData.password" type="password" required />
             </div>
+            <ULink href="/user/register">注册</ULink>
             <UButton>登录</UButton>
         </form>
         <div v-if="errorMessage">{{ errorMessage }}</div>
