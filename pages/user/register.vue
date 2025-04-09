@@ -71,12 +71,12 @@
       })
       
       await navigateTo('/login')
-    } catch (error) {
+    } catch (e: any) {
       useToast().add({
         title: '注册失败',
-        description: error.data?.message || '请检查您的输入',
+        description: e.data?.message || '请检查您的输入',
         icon: 'i-heroicons-exclamation-circle',
-        color: 'red'
+        color: 'error'
       })
     } finally {
       isSubmitting.value = false
